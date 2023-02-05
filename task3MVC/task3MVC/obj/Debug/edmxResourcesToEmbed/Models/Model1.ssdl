@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="jordaninfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="information">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Last Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="Age" Type="int" />
+    <Property Name="JopTitel" Type="nvarchar" MaxLength="250" />
+    <Property Name="Gender" Type="bit" />
+    <Property Name="Imges" Type="text" />
+    <Property Name="CV" Type="text" />
+  </EntityType>
+  <EntityContainer Name="jordaninfoModelStoreContainer">
+    <EntitySet Name="information" EntityType="Self.information" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

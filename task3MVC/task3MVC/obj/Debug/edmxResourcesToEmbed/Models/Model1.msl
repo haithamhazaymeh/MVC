@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="jordaninfoModelStoreContainer" CdmEntityContainer="jordaninfoEntities2">
+    <EntitySetMapping Name="information">
+      <EntityTypeMapping TypeName="jordaninfoModel.information">
+        <MappingFragment StoreEntitySet="information">
+          <ScalarProperty Name="CV" ColumnName="CV" />
+          <ScalarProperty Name="Imges" ColumnName="Imges" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="JopTitel" ColumnName="JopTitel" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
