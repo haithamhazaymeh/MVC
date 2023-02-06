@@ -26,5 +26,7 @@ namespace task3MVC.Models
         }
     
         public virtual DbSet<information> information { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

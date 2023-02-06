@@ -19,6 +19,17 @@ namespace task3MVC.Controllers
             return View();
         }
 
+        public ActionResult OrderView()
+        {
+            return PartialView(db.Order.ToList());
+        }
+
+        public ActionResult _Order()
+        {
+            var d = db.Order.OrderByDescending(c => c.Orderdata).FirstOrDefault();
+            return PartialView("_Order", d);
+        }
+
         public ActionResult search(string Name)
         {
            
@@ -169,6 +180,8 @@ namespace task3MVC.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
 
         protected override void Dispose(bool disposing)
         {

@@ -131,6 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\informationController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -151,6 +152,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -212,8 +219,20 @@
     <Content Include="Views\information\Details.cshtml" />
     <Content Include="Views\information\Edit.cshtml" />
     <Content Include="Views\information\Index.cshtml" />
-    <Content Include="Views\Shared\_navbarandfooter.cshtml" />
+    <Content Include="Views\Shared\_header.cshtml" />
     <Content Include="Views\information\Create2.cshtml" />
+    <Content Include="Views\Shared\_mapDemo.cshtml" />
+    <Content Include="Views\Shared\_footer.cshtml" />
+    <Content Include="Views\Shared\_Paypal.cshtml" />
+    <Content Include="Views\Shared\_Mainlayout.cshtml" />
+    <Content Include="Views\Shared\_paypalpartial.cshtml" />
+    <Content Include="Views\information\demo.cshtml" />
+    <Content Include="Views\information\_Order.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

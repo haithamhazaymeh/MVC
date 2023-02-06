@@ -14,8 +14,46 @@
     <Property Name="Gender" Type="Boolean" />
     <Property Name="Imges" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="CV" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Order" Relationship="jordaninfoModel.FK_Order_information" FromRole="information" ToRole="Order" />
   </EntityType>
   <EntityContainer Name="jordaninfoEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="information" EntityType="Self.information" />
+    <EntitySet Name="Order" EntityType="jordaninfoModel.Order" />
+    <EntitySet Name="sysdiagrams" EntityType="jordaninfoModel.sysdiagrams" />
+    <AssociationSet Name="FK_Order_information" Association="jordaninfoModel.FK_Order_information">
+      <End Role="information" EntitySet="information" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" />
+    <Property Name="Orderdata" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="information" Relationship="jordaninfoModel.FK_Order_information" FromRole="Order" ToRole="information" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Order_information">
+    <End Type="jordaninfoModel.information" Role="information" Multiplicity="0..1" />
+    <End Type="jordaninfoModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="information">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
